@@ -1,4 +1,25 @@
 function add = addcvip(a,b)
+
+% This function performs bitwise addition of two images
+%   SYNTAX: outputImage = addcvip(inputImage1, inputImage2);
+%
+%   inputImage1 - first input image
+%   inputImage2 - second input image
+%
+%   Returns: An added image
+%
+% AUTHOR: Deependra Mishra
+%------------------------------------------------------------------------
+
+% Checking number of input arguments    
+    if nargin<2,
+        error('Too few arguements for addcvip');
+    elseif nargin>2,
+        error('Too many arguements for addcvip');
+    end;
+%----------------------------------------------------------------
+% Checking data type of input image and converting to type double if
+% necessary
     if ~isa(a,'double')
         a=double(a);
     end
@@ -6,7 +27,9 @@ function add = addcvip(a,b)
     if ~isa(b,'double')
         b=double(b);
     end
-            
+%-------------------------------------------------------------------
+% Checking the size of images and making same size by zero padding if
+% necessary
     if size(a,3)>size(b,3)
         b=cat(3,b,b,b);
         %b=repmat(b,[1 1 3]);
@@ -30,7 +53,8 @@ function add = addcvip(a,b)
             b(end,end+size(b,2)-size(a,2),1)=0;
         end
     end
-            
+%-------------------------------------------------------------------
+% Performing add operation on images
     add = a + b;
     
 end

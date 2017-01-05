@@ -8,7 +8,7 @@ function add = addcvip(a,b)
 %
 %   Returns: An added image
 %
-% AUTHOR: Deependra Mishra
+% 
 %------------------------------------------------------------------------
 
 % Checking number of input arguments    
@@ -32,8 +32,8 @@ function add = addcvip(a,b)
 % necessary
     if size(a,3)>size(b,3)
         b=cat(3,b,b,b);
-        %b=repmat(b,[1 1 3]);
-    elseif size(a,3)<size(b,3)
+       %b=repmat(b,[1 1 3]);
+    elseif size(b,3)>size(a,3)
         a=cat(3,a,a,a);
     else
     end

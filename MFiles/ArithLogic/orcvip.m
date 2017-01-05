@@ -8,14 +8,14 @@ function or = orcvip(a,b)
 %
 %   Returns: An ORed image
 %
-%  AUTHOR: Deependra Mishra
+%  
 %------------------------------------------------------------------------
 % Checking number of input arguments    
-    if nargin<2,
-        error('Too few arguements for orcvip');
-    elseif nargin>2,
-        error('Too many arguements for orcvip');
-    end;
+%     if nargin<2,
+%         error('Too few arguements for orcvip');
+%     elseif nargin>2,
+%         error('Too many arguements for orcvip');
+%     end;
 %----------------------------------------------------------------
 % Checking data type of input image and converting to type uint8 if
 % necessary
@@ -29,11 +29,13 @@ function or = orcvip(a,b)
 %-------------------------------------------------------------------
 % Checking the size of images and making same size by zero padding if
 % necessary     
+    
     if size(a,3)>size(b,3)
         b=cat(3,b,b,b);
        %b=repmat(b,[1 1 3]);
-    else
+    elseif size(b,3)>size(a,3)
         a=cat(3,a,a,a);
+    else
     end
     if size(a,2)>size(b,2)
         if size(a,1)>size(b,1)

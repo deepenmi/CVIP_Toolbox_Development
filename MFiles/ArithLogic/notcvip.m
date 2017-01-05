@@ -8,7 +8,7 @@ function not = notcvip(a)
 %
 %   Returns: a NOT image
 %
-% AUTHOR: Deependra Mishra
+% 
 %------------------------------------------------------------------------
 
 % Checking number of input arguments    

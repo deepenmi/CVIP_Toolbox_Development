@@ -33,8 +33,9 @@ function mul = multiplycvip(a,b)
     if size(a,3)>size(b,3)
         b=cat(3,b,b,b);
        %b=repmat(b,[1 1 3]);
-    else
+    elseif size(b,3)>size(a,3)
         a=cat(3,a,a,a);
+    else
     end
     if size(a,2)>size(b,2)
         if size(a,1)>size(b,1)
